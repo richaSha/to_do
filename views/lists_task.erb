@@ -1,0 +1,23 @@
+<h1><%= @name %></h1>
+<h4>All Task's</h4>
+<ul>
+  <% if @tasks %>
+    <% @tasks.each  do |list| %>
+      <li>Task Description: <%=list.description%></li>
+      <li>Due date: <%=list.due_date%></li>
+    <% end %>
+  <% end %>
+</ul>
+<h4>Add New Task</h4>
+<form action="/task/<%= @id %>"" method="post">
+  <div class="input-group">
+    <span class="input-group-addon">Task</span>
+    <input type="text" class="form-control" name="task" placeholder="New Task">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Due Date</span>
+    <input type="text" class="form-control" name="date" placeholder="Due Date">
+  </div>
+ <br>
+  <button type="submit" id="add_task" class="btn btn-success">Add</button>
+</form>
